@@ -48,4 +48,3 @@ function analyzeGrades() {
         <p>F: ${f}</p>
     `;
 }
-<link rel="stylesheet" href="style.css"
