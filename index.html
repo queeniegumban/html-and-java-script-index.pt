@@ -1,0 +1,50 @@
+<!--
+Grade Distribution Analyzer Website
+
+This website allows users to enter student grades and automatically
+analyze their performance. It calculates the total number of students,
+average grade, highest and lowest scores, and shows the distribution
+of letter grades (A–F).
+
+The goal of this website is to provide a simple and visually appealing
+tool for evaluating academic performance in an organized way.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grade Distribution Analyzer</title>
+
+    <!-- Connect CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<h1 class="main-title">Grade Analyzer</h1>
+
+<div class="main-wrapper">
+
+    <!-- LEFT SIDE (Input Section) -->
+    <div class="box input-box">
+        <h2>Enter Grades</h2>
+        <input type="number" id="gradeInput" placeholder="Enter grade (0-100)">
+        <br>
+        <button onclick="addGrade()">Add Grade</button>
+        <button onclick="analyzeGrades()">Analyze</button>
+    </div>
+
+    <!-- RIGHT SIDE (Results Section) -->
+    <div class="box results-box">
+        <h2>Results</h2>
+        <div id="results">No results yet.</div>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
