@@ -1,0 +1,90 @@
+/* -----------------------------
+   PAGE BACKGROUND
+----------------------------- */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+
+    /* Light Blue → Light Green Gradient */
+    background: linear-gradient(
+        135deg,
+        #b1d4e6,
+        #c0edc0
+    );
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Main Title */
+.main-title {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 50px;
+    margin-bottom: 30px;
+    color: #141c2ae2;
+}
+
+/* Wrapper to align boxes side-by-side */
+.main-wrapper {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+/* Shared Box Style */
+.box {
+    background-color: #bce6c4; /* Pale Cream */
+    padding: 35px;
+    width: 320px;
+
+    /* Softer rounded corners */
+    border-radius: 25px;
+
+    /* Soft shadow */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+
+    text-align: center;
+}
+
+/* Input styling */
+input {
+    padding: 10px;
+    width: 80%;
+    font-size: 16px;
+
+    border: 2px solid #031d43; /* Dark Navy Blue */
+    border-radius: 12px; /* Softer edges */
+    outline: none;
+    margin-bottom: 15px;
+}
+
+/* Button styling */
+button {
+    padding: 10px 15px;
+    font-size: 15px;
+    background-color: #054b70;
+    color: white;
+    border: none;
+    border-radius: 12px; /* Softer edges */
+    cursor: pointer;
+    margin: 5px;
+}
+
+button:hover {
+    background-color: #436db9;
+}
+
+/* Results text */
+.results-box {
+    text-align: left;
+}
+
+.results-box h2,
+.input-box h2 {
+    margin-top: 0;
+}
