@@ -1,90 +1,112 @@
-/* -----------------------------
-   PAGE BACKGROUND
------------------------------ */
-
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    height: 100vh;
-
-    /* Light Blue → Light Green Gradient */
-    background: linear-gradient(
-        135deg,
-        #b1d4e6,
-        #c0edc0
-    );
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+/*
+Grade Distribution Analyzer
+Design Stylesheet
+This file controls the visual design of the webpage.
+Features:
+• Bright blue → green gradient background
+• Large centered container
+• Two boxes inside (Input + Results)
+• Lifted shadow effect
+• Clear contrast between background and boxes
+• Font specifications followed
+*/
+body{
+margin:0;
+padding:0;
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+background: linear-gradient(135deg,#00bfff,#00ff95);
+font-family: monospace;
 }
-
-/* Main Title */
-.main-title {
-    font-family: 'Pinyon Script', cursive;
-    font-size: 50px;
-    margin-bottom: 30px;
-    color: #141c2ae2;
+/* Instruction text */
+.instruction{
+color:white;
+font-size:18px;
+margin-bottom:8px;
+text-align:center;
 }
-
-/* Wrapper to align boxes side-by-side */
-.main-wrapper {
-    display: flex;
-    gap: 40px;
-    align-items: center;
+/* MAIN CONTAINER */
+.main-container{
+width:900px;
+background:#f0fffb;
+padding:25px;
+border-radius:18px;
+border:3px solid #00796b;
+box-shadow:0 18px 40px rgba(0,0,0,0.35);
 }
-
-/* Shared Box Style */
-.box {
-    background-color: #bce6c4; /* Pale Cream */
-    padding: 35px;
-    width: 320px;
-
-    /* Softer rounded corners */
-    border-radius: 25px;
-
-    /* Soft shadow */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-
-    text-align: center;
+/* TITLE */
+.title{
+font-size:50px;
+text-align:center;
+margin-bottom:15px;
+font-family:"Mistletoe Magic","Mystery Quest",cursive;
+color:#004d40;
 }
-
-/* Input styling */
-input {
-    padding: 10px;
-    width: 80%;
-    font-size: 16px;
-
-    border: 2px solid #031d43; /* Dark Navy Blue */
-    border-radius: 12px; /* Softer edges */
-    outline: none;
-    margin-bottom: 15px;
+/* LAYOUT FOR BOXES */
+.content-box{
+display:flex;
+justify-content:center;
+gap:40px;
 }
-
-/* Button styling */
-button {
-    padding: 10px 15px;
-    font-size: 15px;
-    background-color: #054b70;
-    color: white;
-    border: none;
-    border-radius: 12px; /* Softer edges */
-    cursor: pointer;
-    margin: 5px;
+/* INPUT BOX */
+.input-box{
+width:350px;
+background:white;
+padding:25px;
+border-radius:15px;
+border:2px solid #00695c;
+box-shadow:0 10px 25px rgba(0,0,0,0.25);
 }
-
-button:hover {
-    background-color: #436db9;
+/* RESULT BOX */
+.result-box{
+width:350px;
+background:white;
+padding:25px;
+border-radius:15px;
+border:2px solid #00695c;
+box-shadow:0 10px 25px rgba(0,0,0,0.25);
 }
-
-/* Results text */
-.results-box {
-    text-align: left;
+/* INPUT FIELD */
+input{
+width:90%;
+padding:11px;
+margin-top:10px;
+margin-bottom:15px;
+border-radius:8px;
+border:1px solid #777;
+font-family:Arial;
 }
-
-.results-box h2,
-.input-box h2 {
-    margin-top: 0;
+/* BUTTON */
+button{
+width:100%;
+padding:12px;
+border:none;
+border-radius:8px;
+background:#00a884;
+color:white;
+font-weight:bold;
+font-family:Arial;
+cursor:pointer;
+transition:0.3s;
+}
+button:hover{
+background:#00796b;
+}
+/* RESULT TEXT */
+.result-box p{
+margin:6px 0;
+font-family:Arial;
+}
+/* Introduction text under the title explaining the website */
+.intro-text{
+text-align:center;
+max-width:600px;
+margin:0 auto 25px auto;
+font-family:monospace;
+font-size:15px;
+color:#004d40;
+line-height:1.2;
 }
