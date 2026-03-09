@@ -1,50 +1,51 @@
-let grades = [];
-
-function addGrade() {
-    const input = document.getElementById("gradeInput");
-    const value = parseInt(input.value);
-
-    if (!isNaN(value) && value >= 0 && value <= 100) {
-        grades.push(value);
-        input.value = "";
-        alert("Grade added successfully!");
-    } else {
-        alert("Enter a valid grade between 0 and 100.");
-    }
+/*
+Grade Distribution Analyzer Script
+This script reads multiple grades entered by the user
+(separated by spaces) and analyzes them.
+Functions include:
+• Total number of grades
+• Average grade
+• Highest grade
+• Lowest grade
+• Grade distribution (A–F)
+*/
+function analyzeGrades(){
+let input = document.getElementById("gradesInput").value.trim();
+if(input === ""){
+alert("Please enter grades.");
+return;
 }
-
-function analyzeGrades() {
-    if (grades.length === 0) {
-        alert("No grades entered.");
-        return;
-    }
-
-    let a = 0, b = 0, c = 0, d = 0, f = 0;
-
-    grades.forEach(function(g) {
-        if (g >= 90) a++;
-        else if (g >= 80) b++;
-        else if (g >= 70) c++;
-        else if (g >= 60) d++;
-        else f++;
-    });
-
-    const total = grades.length;
-    const average = (grades.reduce((sum, g) => sum + g, 0) / total).toFixed(2);
-    const highest = Math.max(...grades);
-    const lowest = Math.min(...grades);
-
-    document.getElementById("results").innerHTML = `
-        <p><strong>Total Students:</strong> ${total}</p>
-        <p><strong>Average:</strong> ${average}</p>
-        <p><strong>Highest:</strong> ${highest}</p>
-        <p><strong>Lowest:</strong> ${lowest}</p>
-        <hr>
-        <p><strong>Grade Distribution:</strong></p>
-        <p>A: ${a}</p>
-        <p>B: ${b}</p>
-        <p>C: ${c}</p>
-        <p>D: ${d}</p>
-        <p>F: ${f}</p>
-    `;
+/* Convert input into numbers */
+let grades = input.split(/\s+/).map(Number);
+/* Remove invalid values */
+grades = grades.filter(g => !isNaN(g));
+if(grades.length === 0){
+alert("Please enter valid numbers.");
+return;
+}
+/* Basic calculations */
+let total = grades.length;
+let sum = grades.reduce((a,b)=>a+b,0);
+let average = (sum/total).toFixed(2);
+let highest = Math.max(...grades);
+let lowest = Math.min(...grades);
+/* Grade distribution */
+let A=0,B=0,C=0,D=0,F=0;
+grades.forEach(g=>{
+if(g>=90) A++;
+else if(g>=80) B++;
+else if(g>=70) C++;
+else if(g>=60) D++;
+else F++;
+});
+/* Display results */
+document.getElementById("total").textContent = total;
+document.getElementById("average").textContent = average;
+document.getElementById("highest").textContent = highest;
+document.getElementById("lowest").textContent = lowest;
+document.getElementById("A").textContent = A;
+document.getElementById("B").textContent = B;
+document.getElementById("C").textContent = C;
+document.getElementById("D").textContent = D;
+document.getElementById("F").textContent = F;
 }
