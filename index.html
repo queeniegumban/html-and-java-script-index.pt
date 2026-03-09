@@ -1,51 +1,64 @@
 <!--
-Grade Distribution Analyzer Website
-
-This website allows users to enter student grades and automatically
-analyze their performance. It calculates the total number of students,
-average grade, highest and lowest scores, and shows the distribution
-of letter grades (A–F).
-
-The goal of this website is to provide a simple and visually appealing
-tool for evaluating academic performance in an organized way.
+Grade Distribution Analyzer
+This webpage allows users to input multiple grades separated by spaces.
+The system analyzes the grades and displays:
+• Total grades
+• Average
+• Highest grade
+• Lowest grade
+• Grade distribution (A–F)
+Design includes a centered container with two boxes:
+Input (left) and Results (right).
 -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Grade Distribution Analyzer</title>
-
-    <!-- Connect CSS -->
-    <link rel="stylesheet" href="style.css">
-
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grade Distribution Analyzer</title>
+<link rel="stylesheet" href="style.css">
+<!-- Title Font -->
+<link href="https://fonts.googleapis.com/css2?family=Mystery+Quest&display=swap" rel="stylesheet">
 </head>
 <body>
-
-<h1 class="main-title">Grade Analyzer</h1>
-
-<div class="main-wrapper">
-
-    <!-- LEFT SIDE (Input Section) -->
-    <div class="box input-box">
-        <h2>Enter Grades</h2>
-        <input type="number" id="gradeInput" placeholder="Enter grade (0-100)">
-        <br>
-        <button onclick="addGrade()">Add Grade</button>
-        <button onclick="analyzeGrades()">Analyze</button>
-    </div>
-
-    <!-- RIGHT SIDE (Results Section) -->
-    <div class="box results-box">
-        <h2>Results</h2>
-        <div id="results">No results yet.</div>
-    </div>
-
+<div class="instruction">
+Enter grades separated by spaces (Example: 90 85 78 100 88)
 </div>
-
+<div class="main-container">
+<h1 class="title">Grade Distribution Analyzer</h1>
+<p class="intro-text">
+This website helps users analyze and calculate graades by simply inputing their grades onto the input box, as it analyzes 
+how many grades have you inputed, the highest and lowest grades, and also the total average of it. This website not only aims to help
+teachers grade students, but also individuals to keep up and track their own grades throughout the system.
+</p>
+<div class="content-box">
+<!-- INPUT BOX -->
+<div class="input-box">
+<label>Enter Grades</label>
+<input
+type="text"
+id="gradesInput"
+placeholder="Example: 85 90 78 92">
+<button onclick="analyzeGrades()">
+Analyze Grades
+</button>
+</div>
+<!-- RESULTS BOX -->
+<div class="result-box">
+<h2>Results</h2>
+<p>Total Grades: <span id="total"></span></p>
+<p>Average: <span id="average"></span></p>
+<p>Highest: <span id="highest"></span></p>
+<p>Lowest: <span id="lowest"></span></p>
+<h3>Grade Distribution</h3>
+<p>A (90–100): <span id="A"></span></p>
+<p>B (80–89): <span id="B"></span></p>
+<p>C (70–79): <span id="C"></span></p>
+<p>D (60–69): <span id="D"></span></p>
+<p>F (Below 60): <span id="F"></span></p>
+</div>
+</div>
+</div>
 <script src="script.js"></script>
 </body>
 </html>
-<link rel="stylesheet" href="style.css"
